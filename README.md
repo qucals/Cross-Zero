@@ -1,3 +1,3 @@
 # Cross-Zero
 
-If you using Windows for OS, please, replace the **system("clear")** to **system("cls")** in Game.cpp
+If you're using Windows for OS, please, replace the **system("clear")** to **system("cls")** in Game.cpp
