@@ -22,14 +22,14 @@ protected:
     void Move(); // The function that gives the player to get move
     int CheckMove(); // The function of checking the right move
 
-    std::pair<std::size_t, std::size_t> getApsolutlyPosition(int*); // The function of returning the position of the board
+    std::pair<std::size_t, std::size_t> getAbsolutelyPosition(int*); // The function of returning the position of the board
 
 protected:
     int** playboard_; // The playboard
     int currentPlayer_; // The current player
     int amountMoves; // Amount of moves in the game
 
-    std::pair<std::size_t, std::size_t> absolutlyPosition; // The absolutly position
+    std::pair<std::size_t, std::size_t> absolutelyPosition; // The absolutly position
 };
 
 #endif

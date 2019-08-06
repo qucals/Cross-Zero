@@ -182,12 +182,12 @@ int Game::CheckMove()
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return 0x0;
     } else {
-        absolutlyPosition = getApsolutlyPosition(&movePosition);
+        absolutelyPosition = getAbsolutelyPosition(&movePosition);
 
-        if (playboard_[absolutlyPosition.first][absolutlyPosition.second] != 0x0) {
+        if (playboard_[absolutelyPosition.first][absolutelyPosition.second] != 0x0) {
             return 0x0;
         } else {
-            playboard_[absolutlyPosition.first][absolutlyPosition.second] = currentPlayer_;
+            playboard_[absolutelyPosition.first][absolutelyPosition.second] = currentPlayer_;
             return 0x1;
         }
     }
@@ -195,7 +195,7 @@ int Game::CheckMove()
     return 0x0;
 }
 
-std::pair<std::size_t, std::size_t> Game::getApsolutlyPosition(int* movePosition)
+std::pair<std::size_t, std::size_t> Game::getAbsolutelyPosition(int* movePosition)
 {
     size_t _x = (*movePosition);
     size_t _y = 0;
