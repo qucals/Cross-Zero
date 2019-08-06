@@ -27,7 +27,7 @@ protected:
 protected:
     int** playboard_; // The playboard
     int currentPlayer_; // The current player
-    int amountMoves; // Amount of moves in the game
+    int amountMoves_; // Amount of moves in the game
 
     std::pair<std::size_t, std::size_t> absolutelyPosition; // The absolutly position
 };

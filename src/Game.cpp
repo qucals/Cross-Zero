@@ -28,7 +28,7 @@ Game::~Game()
 
 void Game::Start()
 {
-    if (amountMoves != 0) {
+    if (amountMoves_ != 0) {
         ClearBoard();
     }
 
@@ -87,7 +87,7 @@ void Game::ClearBoard()
             }
         }
 
-        amountMoves = 0;
+        amountMoves_ = 0;
     } else {
         throw "THE_BOARD_DOES_NOT_EXIST";
     }
@@ -102,9 +102,9 @@ int Game::isWin()
         0x3 - the play is continuing;
     */
 
-    if (amountMoves < 5) {
+    if (amountMoves_ < 5) {
         return 0x3;
-    } else if (amountMoves == 9) {
+    } else if (amountMoves_ == 9) {
         return 0x0;
     }
 
@@ -169,7 +169,7 @@ repeatForIdiots:
         goto repeatForIdiots;
     }
 
-    amountMoves++;
+    amountMoves_++;
 }
 
 int Game::CheckMove()
