@@ -1,14 +1,13 @@
 #include "Game.hpp"
 
 Game::Game()
+    : currentPlayer_(0x2)
+    , playboard_(new int*[3])
 {
     /*
         0x1 - zero
         0x2 - cross
     */
-    currentPlayer_ = 0x2;
-
-    playboard_ = new int*[3];
 
     for (int i(0); i < 3; i++) {
         playboard_[i] = new int;
@@ -155,7 +154,7 @@ void Game::Move()
 {
     currentPlayer_ = currentPlayer_ == 0x1 ? 0x2 : 0x1;
 
-repeatForIdiots:
+gRepeat:
     std::cout << "Текущий ход ";
 
     if (currentPlayer_ == 0x1) {
@@ -166,7 +165,7 @@ repeatForIdiots:
 
     if (CheckMove() == 0x0) {
         std::cout << "Некорректный ввод данных! Пожалуйста, повторите попытку ввода!" << std::endl;
-        goto repeatForIdiots;
+        goto gRepeat;
     }
 
     amountMoves_++;
@@ -182,12 +181,12 @@ int Game::CheckMove()
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return 0x0;
     } else {
-        absolutelyPosition = getAbsolutelyPosition(&movePosition);
+        absolutelyPosition_ = getAbsolutelyPosition(&movePosition);
 
-        if (playboard_[absolutelyPosition.first][absolutelyPosition.second] != 0x0) {
+        if (playboard_[absolutelyPosition_.first][absolutelyPosition_.second] != 0x0) {
             return 0x0;
         } else {
-            playboard_[absolutelyPosition.first][absolutelyPosition.second] = currentPlayer_;
+            playboard_[absolutelyPosition_.first][absolutelyPosition_.second] = currentPlayer_;
             return 0x1;
         }
     }

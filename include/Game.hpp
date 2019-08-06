@@ -1,5 +1,4 @@
-#ifndef GAME_HPP
-#define GAME_HPP
+#pragma once
 
 #include <iostream>
 
@@ -29,7 +28,5 @@ protected:
     int currentPlayer_; // The current player
     int amountMoves_; // Amount of moves in the game
 
-    std::pair<std::size_t, std::size_t> absolutelyPosition; // The absolutly position
+    std::pair<std::size_t, std::size_t> absolutelyPosition_; // The absolutly position
 };
-
-#endif
