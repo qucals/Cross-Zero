@@ -17,7 +17,7 @@ protected:
     void PrintBoard(); // The function of printing the board of the game to the display
     void ClearBoard(); // The function of resetting values of the board
 
-    void PrintResult(); // The function of printing the result of the game
+    void PrintResult(int*); // The function of printing the result of the game
 
     void Move(); // The function that gives the player to get move
     int CheckMove(); // The function of checking the right move

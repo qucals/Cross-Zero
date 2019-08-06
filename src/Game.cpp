@@ -6,7 +6,6 @@ Game::Game()
         0x1 - zero
         0x2 - cross
     */
-
     currentPlayer_ = 0x2;
 
     playboard_ = new int*[3];
@@ -33,17 +32,19 @@ void Game::Start()
         ClearBoard();
     }
 
+    int winPlayer = 0x0;
+
     while (true) {
         PrintBoard();
         Move();
 
-        if (isWin() != 0x3) {
+        if (winPlayer = isWin(); winPlayer != 0x3) {
             break;
         }
     }
 
     PrintBoard();
-    PrintResult();
+    PrintResult(&winPlayer);
 }
 
 void Game::PrintBoard()
@@ -133,9 +134,9 @@ bool Game::CheckLines()
     return false;
 }
 
-void Game::PrintResult()
+void Game::PrintResult(int* winPlayer)
 {
-    switch (currentPlayer_) {
+    switch (*winPlayer) {
     case 0x1:
         std::cout << "Выиграли нолики!" << std::endl;
         break;
