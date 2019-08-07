@@ -10,7 +10,7 @@ Game::Game()
     */
 
     for (int i(0); i < 3; i++) {
-        playboard_[i] = new int;
+        playboard_[i] = new int[3];
     }
 
     ClearBoard();
@@ -22,7 +22,7 @@ Game::~Game()
         for (int i(0); i < 3; i++) {
             delete[] playboard_[i];
         }
-        
+
         delete[] playboard_;
     }
 }
